@@ -35,7 +35,7 @@ pipeline {
             // Ensure that each executor has its own gradle cache to not affect other builds
             // that run concurrently.
             args '--device /dev/kvm:/dev/kvm -v /var/local/container_shared/gradle_cache/$EXECUTOR_NUMBER:/home/user/.gradle -m=6.5G'
-            label 'LimitedEmulator'
+            label 'Slave4'
         }
     }
 
