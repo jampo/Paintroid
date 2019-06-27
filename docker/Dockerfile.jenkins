@@ -46,6 +46,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         openssh-client \
         x11-common \
         x11-utils \
+        libpulse0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Fastlane
