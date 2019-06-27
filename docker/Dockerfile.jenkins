@@ -44,7 +44,7 @@ ARG _SDKMANAGER=$ANDROID_SDK_ROOT/tools/bin/sdkmanager
 RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
         openssh-client \
-        x11-commons \
+        x11-common \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Fastlane
