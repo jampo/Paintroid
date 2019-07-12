@@ -41,6 +41,7 @@ ARG _SDKMANAGER=$ANDROID_SDK_ROOT/tools/bin/sdkmanager
 #
 
 # curl/openssh-client: upload to web/share
+# x11-commons/x11-utils/libpulse0 needed to start emulator
 RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
         openssh-client \
@@ -118,3 +119,6 @@ RUN if [ ! -z "$SDKMANAGER_PACKAGES" ]; then yes | $_SDKMANAGER $SDKMANAGER_PACK
 #       We still use it here to ensure that these settings
 #       are respected, no matter what is configured elsewhere.
 ENV _JAVA_OPTIONS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
+
+# Accept SDK licenses
+RUN yes | $_SDKMANAGER --licenses
